@@ -15,13 +15,13 @@ serialized_ingredients = open(url).read
 
 ingredients = JSON.parse(serialized_ingredients)
 
-ingredients = ingredients.to_a
+ingredients = ingredients["drinks"]
 
 Ingredient.delete_all
 
 puts 'Creating ingredients...'
-ingredients.each_with_index { |ingredient, i|
-  ingredient_name = ingredients[0][1][i]["strIngredient1"]
+ingredients.each { |ingredient|
+  ingredient_name = ingredients["strIngredient1"]
   new_ingredient = Ingredient.new( name: ingredient_name)
   new_ingredient.save!
   }
