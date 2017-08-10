@@ -21,7 +21,7 @@ Ingredient.delete_all
 
 puts 'Creating ingredients...'
 ingredients.each { |ingredient|
-  ingredient_name = ingredients["strIngredient1"]
+  ingredient_name = ingredient["strIngredient1"]
   new_ingredient = Ingredient.new( name: ingredient_name)
   new_ingredient.save!
   }
