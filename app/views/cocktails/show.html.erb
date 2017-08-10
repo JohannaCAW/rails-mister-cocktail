@@ -1,2 +1,7 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<p><%= @cocktail.name %></p>
+
+<ul>
+  <% @cocktail.doses.each do |review| %>
+    <li><%= "Rating: #{dose.description} - #{review.ingredient_id}" %></li>
+  <% end %>
+</ul>
